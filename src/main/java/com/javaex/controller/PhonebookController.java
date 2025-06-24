@@ -85,7 +85,7 @@ public class PhonebookController {
 	public String modify(@ModelAttribute PersonVO personVO) {
 		System.out.println("mooooooodiFY");
 		
-		System.out.println(personVO); //이거 꼭 확인
+		System.out.println(personVO); //이거 꼭 찍어서 확인
 		
 		PhonebookDAO phonebookDAO = new PhonebookDAO();
 		int count = phonebookDAO.personUpdate(personVO);
