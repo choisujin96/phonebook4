@@ -1,7 +1,6 @@
 package com.javaex.controller;
 
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,21 +9,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.javaex.dao.PhonebookDAO;
+import com.javaex.service.PhonebookService;
 import com.javaex.vo.PersonVO;
 
 @Controller
 //@RequestMapping(value="/person")
 public class PhonebookController {
 
-
+	@Autowired
+	private PhonebookService phonebookService;
+	
+	
 	//리스트
 	@RequestMapping(value="/list", method= {RequestMethod.GET, RequestMethod.POST})
 	public String select(Model model) {
-		System.out.println("phonebookController/list"); //ㅇㅋ
+		System.out.println("phonebookController/list"); 
 		
-		PhonebookDAO phonebookDAO = new PhonebookDAO();
-		List<PersonVO> personList = phonebookDAO.personSelect();
-		System.out.println(personList);
 		
 		model.addAttribute("pList", personList);
 		
@@ -83,7 +83,7 @@ public class PhonebookController {
 	//수정
 	@RequestMapping(value="/modify", method= {RequestMethod.GET, RequestMethod.POST})
 	public String modify(@ModelAttribute PersonVO personVO) {
-		System.out.println("mooooooodiFY");
+		System.out.println("mooooooodiFY");//ㅇㅋ
 		
 		System.out.println(personVO); //이거 꼭 찍어서 확인
 		
