@@ -31,11 +31,22 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		
+		<!-- 기본 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- 기본 -->
+		
+		
 		<!--jsp servlet으로 변환-->
 		<dependency>
 		    <groupId>org.apache.tomcat.embed</groupId>
@@ -63,6 +74,7 @@
 		<!--//jstl-->		
 				
 				
+				
 		<!--JDBC mysql-driver-->
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -70,7 +82,8 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-	
+
+				
 				
 		<!--mybatis-->
 		<dependency>
@@ -97,13 +110,8 @@
 		    <optional>true</optional>
 		</dependency>
 
-
 		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		
 	</dependencies>
 
 	<build>
